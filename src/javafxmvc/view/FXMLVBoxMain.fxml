@@ -34,7 +34,7 @@
           </Menu>
             <Menu mnemonicParsing="false" text="SOBRE">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Horários e Pagamentos" />
+                  <MenuItem fx:id="menuItemSobreHorariosPagamentos" mnemonicParsing="false" onAction="#handleMenuItemSobreHorariosPagamentos" text="Horários e Pagamentos" />
                </items>
             </Menu>
         </menus>
