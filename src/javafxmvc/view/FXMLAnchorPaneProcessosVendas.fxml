@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="376.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLAnchorPaneProcessosVendasController">
+<AnchorPane id="AnchorPane" prefHeight="376.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLAnchorPaneProcessosVendasController">
     <children>
         <SplitPane dividerPositions="0.5" layoutX="89.0" layoutY="25.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="303.0">
                     <children>
-                        <TableView fx:id="tableViewVendas" layoutX="6.0" layoutY="14.0" prefHeight="398.0" prefWidth="296.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tableViewVendas" layoutX="6.0" layoutY="14.0" prefHeight="376.0" prefWidth="384.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-88.0" AnchorPane.topAnchor="0.0">
                             <columns>
-                                <TableColumn fx:id="tableColumnVendaCodigo" prefWidth="61.0" text="Código" />
-                                <TableColumn fx:id="tableColumnVendaData" prefWidth="72.0" text="Data" />
-                                <TableColumn fx:id="tableColumnVendaCliente" prefWidth="159.0" text="Cliente" />
+                                <TableColumn fx:id="tableColumnVendaCodigo" prefWidth="45.0" text="Código" />
+                                <TableColumn fx:id="tableColumnVendaCliente" minWidth="0.0" prefWidth="50.0" text="Cliente" />
+                                <TableColumn fx:id="tableColumnVendaData" minWidth="6.0" prefWidth="56.0" text="Data" />
+                        <TableColumn prefWidth="102.0" text="Tipo de pet" />
+                        <TableColumn prefWidth="47.0" text="Tipo de serviço" />
+                        <TableColumn prefWidth="220.0" text="Funcionário" />
                             </columns>
                         </TableView>
                     </children>
                 </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="374.0" prefWidth="422.0">
                     <children>
                         <Group layoutX="-60.0" layoutY="45.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
                             <children>

@@ -33,6 +33,8 @@ public class FXMLAnchorPaneCadastrosClientesController implements Initializable 
     @FXML
     private TableColumn<Cliente, String> tableColumnClienteCPF;
     @FXML
+    private TableColumn<Cliente, String> tableColumnClienteTelefone;
+    @FXML
     private Button buttonInserir;
     @FXML
     private Button buttonAlterar;
@@ -73,6 +75,7 @@ public class FXMLAnchorPaneCadastrosClientesController implements Initializable 
     public void carregarTableViewClientes() {
         tableColumnClienteNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         tableColumnClienteCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+        tableColumnClienteTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
 
         listClientes = clienteDAO.listar();
 
