@@ -7,25 +7,27 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLAnchorPaneSobreHorariosPagamentosController">
    <children>
-      <AnchorPane layoutX="31.0" layoutY="49.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #808080;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="31.0" layoutY="49.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Group layoutX="24.0" layoutY="47.0">
+            <Group layoutX="25.0" layoutY="47.0">
                <children>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="HORÁRIO DE FUNCIONAMENTO">
+                  <Text layoutX="10.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RAÇAS DE CACHORROS POR CIDADE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PAGAMENTOS">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" layoutY="33.158203125" strokeType="OUTSIDE" strokeWidth="0.0" text="SEGUNDA A SÁBADO" />
-                  <Text fill="WHITE" layoutY="69.158203125" strokeType="OUTSIDE" strokeWidth="0.0" text="08:00 ás 12:00 de 12:30 ás 17:30" />
-                  <Text fill="WHITE" layoutY="147.158203125" strokeType="OUTSIDE" strokeWidth="0.0" text="Cartão, boleto e à vista" />
                </children>
             </Group>
+            <Text layoutX="35.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TINPET 2021">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="35.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entre em contato com o dono do animal para mais informações.">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </children>

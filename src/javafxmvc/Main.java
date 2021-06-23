@@ -15,7 +15,7 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.setTitle("SISTEMA PETSHOP TINPET");
+        stage.setTitle("SISTEMA TINPET");
         stage.setResizable(false);
         stage.show();
     }

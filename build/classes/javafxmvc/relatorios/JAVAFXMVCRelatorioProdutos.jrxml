@@ -47,7 +47,7 @@ ORDER BY produtos.cdproduto]]>
 				</staticText>
 				<image>
 					<reportElement x="10" y="0" width="100" height="92" uuid="b3d5f869-d8a9-4872-a350-5a0179295afd"/>
-					<imageExpression><![CDATA["E:/Documentos (E)/GITHUB-Faculdade/JAVAFX/tinpet.png"]]></imageExpression>
+					<imageExpression><![CDATA["E:/Documentos (E)/GITHUB-Faculdade/JAVAFX/src/javafxmvc/imagens/tinpet.png"]]></imageExpression>
 				</image>
 			</frame>
 		</band>
