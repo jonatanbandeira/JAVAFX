@@ -105,7 +105,21 @@ public class PetDAO {
                 pet.setTelefone(resultado.getString("telefone"));
                 pet.setEmail(resultado.getString("email"));
                 
-                //Falta terminar a parte de RacaDAO.java, PorteDAO.java, SexoDAO.java, Cidade.DAO.java;
+                RacaDAO racaDAO = new RacaDAO();
+                RacaDAO.setConnection(connection);
+                raca = racaDAO.buscar(raca);
+                
+                PorteDAO porteDAO = new PorteDAO();
+                PorteDAO.setConnection(connection);
+                porte = porteDAO.buscar(porte);
+                
+                SexoDAO sexoDAO = new SexoDAO();
+                SexoDAO.setConnection(connection);
+                sexo = sexoDAO.buscar(sexo);
+                
+                CidadeDAO cidadeDAO = new CidadeDAO();
+                RacaDAO.setConnection(connection);
+                cidade = cidadeDAO.buscar(cidade);
                 
                 pet.setRaca(raca);
                 pet.setPorte(porte);
