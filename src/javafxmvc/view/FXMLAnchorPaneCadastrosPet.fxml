@@ -22,20 +22,18 @@
             <Label layoutX="65.0" layoutY="171.0" text="Sexo:" />
             <Label layoutX="66.0" layoutY="208.0" text="Nome do dono:" />
             <Label layoutX="67.0" layoutY="242.0" prefHeight="17.0" prefWidth="52.0" text="Telefone:" />
-            <Label layoutX="64.0" layoutY="311.0" text="Endereço:" />
+            <Label layoutX="64.0" layoutY="311.0" text="Cidade:" />
             <Label layoutX="67.0" layoutY="276.0" prefHeight="17.0" prefWidth="52.0" text="Email:" />
-            <Button fx:id="buttonInserir" layoutX="515.0" layoutY="350.0" mnemonicParsing="false" onAction="#handleButtonInserir" prefHeight="25.0" prefWidth="65.0" text="Inserir" />
-            <Button fx:id="buttonAlterar" layoutX="515.0" layoutY="295.0" mnemonicParsing="false" onAction="#handleButtonAlterar" prefHeight="17.0" prefWidth="65.0" text="Alterar" />
-            <Button fx:id="buttonRemover" layoutX="515.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleButtonRemover" prefHeight="25.0" prefWidth="65.0" text="Remover" />
-            <TextField layoutX="170.0" layoutY="57.0" prefHeight="25.0" prefWidth="199.0" />
-            <TextField layoutX="170.0" layoutY="94.0" prefHeight="25.0" prefWidth="199.0" />
-            <TextField layoutX="170.0" layoutY="204.0" prefHeight="25.0" prefWidth="199.0" />
-            <ComboBox layoutX="170.0" layoutY="129.0" prefHeight="25.0" prefWidth="199.0" />
-            <ComboBox layoutX="170.0" layoutY="167.0" prefHeight="25.0" prefWidth="199.0" />
-            <TextField layoutX="170.0" layoutY="238.0" prefHeight="25.0" prefWidth="199.0" />
-            <TextField layoutX="170.0" layoutY="272.0" prefHeight="25.0" prefWidth="199.0" />
-            <TextField layoutX="170.0" layoutY="307.0" prefHeight="55.0" prefWidth="199.0" />
-            <Button layoutX="515.0" layoutY="180.0" mnemonicParsing="false" text="Visualizar" />
+            <Button fx:id="buttonInserir" layoutX="508.0" layoutY="364.0" mnemonicParsing="false" onAction="#handleButtonInserir" prefHeight="25.0" prefWidth="65.0" text="Inserir" />
+            <TextField fx:id="textFieldNomePet" layoutX="170.0" layoutY="57.0" prefHeight="25.0" prefWidth="238.0" />
+            <TextField fx:id="textFieldNomeDono" layoutX="170.0" layoutY="204.0" prefHeight="25.0" prefWidth="238.0" />
+            <ComboBox fx:id="comboBoxPorte" layoutX="170.0" layoutY="129.0" prefHeight="25.0" prefWidth="238.0" promptText="Selecione o porte do seu Pet..." />
+            <ComboBox fx:id="comboBoxSexo" layoutX="170.0" layoutY="167.0" prefHeight="25.0" prefWidth="238.0" promptText="Selecione o sexo do seu Pet..." />
+            <TextField fx:id="textFieldTelefone" layoutX="170.0" layoutY="238.0" prefHeight="25.0" prefWidth="238.0" />
+            <TextField fx:id="textFieldPetEmail" layoutX="170.0" layoutY="272.0" prefHeight="25.0" prefWidth="238.0" />
+            <Button layoutX="421.0" layoutY="364.0" mnemonicParsing="false" text="Visualizar" />
+            <ComboBox fx:id="comboBoxRaca" layoutX="170.0" layoutY="94.0" prefHeight="25.0" prefWidth="238.0" promptText="Selecione a raça do seu Pet..." />
+            <ComboBox fx:id="comboBoxCidade" layoutX="170.0" layoutY="307.0" prefHeight="25.0" prefWidth="238.0" promptText="Selecione a cidade...." />
          </children>
       </AnchorPane>
    </children>
