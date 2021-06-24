@@ -118,7 +118,7 @@ public class PetDAO {
                 sexo = sexoDAO.buscar(sexo);
                 
                 CidadeDAO cidadeDAO = new CidadeDAO();
-                RacaDAO.setConnection(connection);
+                CidadeDAO.setConnection(connection);
                 cidade = cidadeDAO.buscar(cidade);
                 
                 pet.setRaca(raca);
