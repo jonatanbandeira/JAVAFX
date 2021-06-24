@@ -18,6 +18,10 @@ import javafxmvc.model.dao.PetDAO;
 import javafxmvc.model.domain.Pet;
 import javafxmvc.model.database.Database;
 import javafxmvc.model.database.DatabaseFactory;
+import javafxmvc.model.domain.Cidade;
+import javafxmvc.model.domain.Porte;
+import javafxmvc.model.domain.Raca;
+import javafxmvc.model.domain.Sexo;
 
 public class FXMLAnchorPaneCadastrosPetsControlle implements Initializable {
 
@@ -30,11 +34,11 @@ public class FXMLAnchorPaneCadastrosPetsControlle implements Initializable {
     @FXML
     private TextField textFieldNomePet;
     @FXML
-    private ComboBox<> comboBoxRaca;
+    private ComboBox<Raca> comboBoxRaca;
     @FXML
-    private ComboBox<> comboBoxPorte;
+    private ComboBox<Porte> comboBoxPorte;
     @FXML
-    private ComboBox<> comboBoxSexo;
+    private ComboBox<Sexo> comboBoxSexo;
     @FXML
     private TextField textFieldNomeDono;
     @FXML
@@ -42,7 +46,7 @@ public class FXMLAnchorPaneCadastrosPetsControlle implements Initializable {
     @FXML
     private TextField textFieldPetEmail;
     @FXML
-    private ComboBox<> comboBoxCidade;
+    private ComboBox<Cidade> comboBoxCidade;
 
     private List<Pet> listPets;
     private ObservableList<Pet> observableListPets;
