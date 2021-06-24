@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="376.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLAnchorPaneRelatoriosQuantidadeProdutosController">
    <children>
-      <TableView fx:id="tableViewProdutos" prefHeight="328.0" prefWidth="600.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TableView fx:id="tableViewProdutos" prefHeight="319.0" prefWidth="600.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
           <TableColumn fx:id="tableColumnProdutoCodigo" prefWidth="76.0" text="Código" />
           <TableColumn fx:id="tableColumnProdutoNome" prefWidth="95.0" text="Nome" />
@@ -17,7 +17,7 @@
             <TableColumn fx:id="tableColumnProdutoCategoria" prefWidth="192.0" text="Categoria" />
         </columns>
       </TableView>
-      <Button fx:id="buttonImprimir" layoutX="245.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleImprimir" style="-fx-background-color: #00afbb;" text="Imprimir relatório" textFill="WHITE">
+      <Button fx:id="buttonImprimir" layoutX="241.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleImprimir" style="-fx-background-color: #00afbb; -fx-background-radius: 10;" text="Imprimir relatório" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
