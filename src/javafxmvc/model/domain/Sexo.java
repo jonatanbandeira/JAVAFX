@@ -18,7 +18,7 @@ public class Sexo implements Serializable  {
         return cdSexo;
     }
     
-    public void steCdSexo(int cdSexo) {
+    public void setCdSexo(int cdSexo) {
         this.cdSexo = cdSexo;
     }
     
