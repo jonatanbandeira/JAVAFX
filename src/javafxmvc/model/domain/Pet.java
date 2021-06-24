@@ -6,18 +6,18 @@ public class Pet implements Serializable {
 
     private int cdPet;
     private String nomePet;
-    private String raca;
-    private String porte;
-    private String sexo;
+    private Raca raca;
+    private Porte porte;
+    private Sexo sexo;
     private String nomeDono;
     private String telefone;
     private String email;
-    private String cidade;
+    private Cidade cidade;
 
     public Pet(){
     }
     
-    public Pet(int cdPet, String nomePet, String raca, String porte, String sexo, String nomeDono, String telefone, String email, String cidade) {
+    public Pet(int cdPet, String nomePet, Raca raca, Porte porte, Sexo sexo, String nomeDono, String telefone, String email, Cidade cidade) {
         this.cdPet = cdPet;
         this.nomePet = nomePet;
         this.raca = raca;
@@ -45,27 +45,27 @@ public class Pet implements Serializable {
         this.nomePet = nomePet;
     }
 
-    public String getRaca() {
+    public Raca getRaca() {
         return raca;
     }
 
-    public void setRaca(String raca) {
+    public void setRaca(Raca raca) {
         this.raca = raca;
     }
     
-    public String getPorte() {
+    public Porte getPorte() {
         return porte;
     }
 
-    public void setPorte(String porte) {
+    public void setPorte(Porte porte) {
         this.porte = porte;
     }
     
-    public String getSexo() {
+    public Sexo getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(Sexo sexo) {
         this.sexo = sexo;
     }
     
@@ -93,11 +93,11 @@ public class Pet implements Serializable {
         this.email = email;
     }
     
-    public String getCidade() {
+    public Cidade getCidade() {
         return cidade;
     }
 
-    public void setCidade(String cidade) {
+    public void setCidade(Cidade cidade) {
         this.cidade = cidade;
     }
     
