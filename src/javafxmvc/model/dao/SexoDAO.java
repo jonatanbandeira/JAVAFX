@@ -23,7 +23,7 @@ public class SexoDAO {
     }
 
     public boolean inserir(Sexo sexo) {
-        String sql = "INSERT INTO sexo(codSexo, descricao) VALUES(?,?)";
+        String sql = "INSERT INTO sexo(cdSexo, nomeSexo) VALUES(?,?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, sexo.getCdSexo());
@@ -37,7 +37,7 @@ public class SexoDAO {
     }
 
     public boolean alterar(Sexo sexo) {
-        String sql = "UPDATE sexo SET nomeSexo=?, descricao=? WHERE cdSexo=?";
+        String sql = "UPDATE sexo SET nomeSexo=? WHERE cdSexo=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, sexo.getCdSexo());
