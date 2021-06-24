@@ -5,11 +5,13 @@
  */
 package javafxmvc.model.domain;
 
+import java.io.Serializable;
+
 /**
  *
  * @author victor
  */
-public class Cidade {
+public class Cidade implements Serializable {
     private int cdCidade;
     private String nomeCidade;
         

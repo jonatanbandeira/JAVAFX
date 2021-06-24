@@ -3,29 +3,35 @@ package javafxmvc.model.domain;
 import java.io.Serializable;
 
 public class Porte implements Serializable  {
-    private String cod_porte;
-    private String descricao;
-    
-    private Porte porte;
+    private int cdPorte;
+    private String nomePorte;
     
     public Porte() {
     }
     
-    public Porte(String cod_porte, String descricao) {
-        this.cod_porte = cod_porte;
-        this.descricao = descricao;
+    public Porte(int cdPorte, String nomePorte) {
+        this.cdPorte = cdPorte;
+        this.nomePorte = nomePorte;
     }
     
-    public String getCod_porte() {
-        return cod_porte;
+    public int getCdPorte() {
+        return cdPorte;
+    }
+    
+    public void setCdPorte(int cdPorte) {
+        this.cdPorte = cdPorte;
+    }
+    
+    public String getNomePorte() {
+        return nomePorte;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setNomePorte(String nomePorte) {
+        this.nomePorte = nomePorte;
     }
     
     @Override
     public String toString() {
-        return this.descricao;
+        return this.nomePorte;
     }
 }

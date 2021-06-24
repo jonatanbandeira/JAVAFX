@@ -2,30 +2,36 @@ package javafxmvc.model.domain;
 
 import java.io.Serializable;
 
-public class Sexo  implements Serializable  {
-    private String cod_sexo;
-    private String descricao;
-    
-    private Sexo sexo;
+public class Sexo implements Serializable  {
+    private int cdSexo;
+    private String nomeSexo;
     
     public Sexo() {
     }
     
-    public Sexo(String cod_sexo, String descricao) {
-        this.cod_sexo = cod_sexo;
-        this.descricao = descricao;
+    public Sexo(int cdSexo, String nomeSexo) {
+        this.cdSexo = cdSexo;
+        this.nomeSexo = nomeSexo;
     }
     
-    public String getCod_sexo() {
-        return cod_sexo;
+    public int getCdSexo() {
+        return cdSexo;
     }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    
+    public void steCdSexo(int cdSexo) {
+        this.cdSexo = cdSexo;
+    }
+    
+    public String getNomeSexo() {
+        return nomeSexo;
+    }
+    
+    public void setNomeSexo(String nomeSexo) {
+        this.nomeSexo = nomeSexo;
     }
     
     @Override
     public String toString() {
-        return this.descricao;
+        return this.nomeSexo;
     }
 }

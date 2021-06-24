@@ -5,11 +5,13 @@
  */
 package javafxmvc.model.domain;
 
+import java.io.Serializable;
+
 /**
  *
  * @author victor
  */
-public class Raca {
+public class Raca implements Serializable {
     private int cdRaca;
     private String nomeRaca;
     
