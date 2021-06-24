@@ -81,21 +81,37 @@ public class PetDAO {
     }
 
     public List<Pet> listar() {
-        String sql = "SELECT * FROM clientes";
+        String sql = "SELECT * FROM Pets";
         List<Pet> retorno = new ArrayList<>();
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             ResultSet resultado = stmt.executeQuery();
             while (resultado.next()) {
+                
                 Pet pet = new Pet();
-                Raca raca = new raca();
-                Porte porte = new porte();
-                Sexo sexo = new sexo();
-                Cidade cidade = new cidade();                
+                Raca raca = new Raca();
+                Porte porte = new Porte();
+                Sexo sexo = new Sexo();
+                Cidade cidade = new Cidade();  
+                
+                raca.setCdRaca(resultado.getInt("cdRaca"));
+                porte.setCdPorte(resultado.getInt("cdPorte"));
+                sexo.setCdSexo(resultado.getInt("cdSexo"));
+                cidade.setCdCidade(resultado.getInt("cdCidade"));
+                
                 pet.setCdPet(resultado.getInt("cdPet"));
                 pet.setNomePet(resultado.getString("nomePet"));
-                pet.setRaca(resultado.getString("raca"));
+                pet.setNomeDono(resultado.getString("nomeDono"));
                 pet.setTelefone(resultado.getString("telefone"));
+                pet.setEmail(resultado.getString("email"));
+                
+                //Falta terminar a parte de RacaDAO.java, PorteDAO.java, SexoDAO.java, Cidade.DAO.java;
+                
+                pet.setRaca(raca);
+                pet.setPorte(porte);
+                pet.setSexo(sexo);
+                pet.setCidade(cidade);
+                
                 retorno.add(pet);
             }
         } catch (SQLException ex) {
@@ -104,17 +120,36 @@ public class PetDAO {
         return retorno;
     }
 
-    public Pet buscar(Pet cliente) {
-        String sql = "SELECT * FROM clientes WHERE cdCliente=?";
+    public Pet buscar(Pet pet) {
+        String sql = "SELECT * FROM pets WHERE cdPet=?";
         Pet retorno = new Pet();
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setInt(1, pet.getCdCliente());
+            stmt.setInt(1, pet.getCdPet());
             ResultSet resultado = stmt.executeQuery();
             if (resultado.next()) {
-                pet.setNome(resultado.getString("nome"));
-                pet.setCpf(resultado.getString("cpf"));
+                
+                Raca raca = new Raca();
+                Porte porte = new Porte();
+                Sexo sexo = new Sexo();
+                Cidade cidade = new Cidade(); 
+                
+                raca.setCdRaca(resultado.getInt("cdRaca"));
+                porte.setCdPorte(resultado.getInt("cdPorte"));
+                sexo.setCdSexo(resultado.getInt("cdSexo"));
+                cidade.setCdCidade(resultado.getInt("cdCidade"));
+                
+                pet.setCdPet(resultado.getInt("cdPet"));
+                pet.setNomePet(resultado.getString("nomePet"));
+                pet.setNomeDono(resultado.getString("nomeDono"));
                 pet.setTelefone(resultado.getString("telefone"));
+                pet.setEmail(resultado.getString("email"));
+                
+                pet.setRaca(raca);
+                pet.setPorte(porte);
+                pet.setSexo(sexo);
+                pet.setCidade(cidade);
+                
                 retorno = pet;
             }
         } catch (SQLException ex) {
