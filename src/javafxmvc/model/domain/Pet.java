@@ -101,10 +101,6 @@ public class Pet implements Serializable {
         this.cidade = cidade;
     }
     
-    /**
-     *
-     * @return
-     */
     @Override
     public String toString() {
         return this.nomePet;
