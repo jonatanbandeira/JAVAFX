@@ -106,19 +106,19 @@ public class PetDAO {
                 pet.setEmail(resultado.getString("email"));
                 
                 RacaDAO racaDAO = new RacaDAO();
-                RacaDAO.setConnection(connection);
+                racaDAO.setConnection(connection);
                 raca = racaDAO.buscar(raca);
                 
                 PorteDAO porteDAO = new PorteDAO();
-                PorteDAO.setConnection(connection);
+                porteDAO.setConnection(connection);
                 porte = porteDAO.buscar(porte);
                 
                 SexoDAO sexoDAO = new SexoDAO();
-                SexoDAO.setConnection(connection);
+                sexoDAO.setConnection(connection);
                 sexo = sexoDAO.buscar(sexo);
                 
                 CidadeDAO cidadeDAO = new CidadeDAO();
-                CidadeDAO.setConnection(connection);
+                cidadeDAO.setConnection(connection);
                 cidade = cidadeDAO.buscar(cidade);
                 
                 pet.setRaca(raca);
