@@ -9,4 +9,8 @@ public class DatabaseFactory {
         }
         return null;
     }
+
+    public void getConnection() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

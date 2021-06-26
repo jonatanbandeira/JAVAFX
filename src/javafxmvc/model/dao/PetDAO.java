@@ -27,17 +27,17 @@ public class PetDAO {
     }
 
     public boolean inserir(Pet pet) {
-        String sql = "INSERT INTO pets(nomePet, raca, porte, sexo, nomeDono, telefone, email, cidade) VALUES(?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO pets(nomePet, cdRaca, cdPorte, cdSexo, nomeDono, telefone, email, cdCidade) VALUES(?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, pet.getNomePet());
-            stmt.setString(2, pet.getRaca().getNomeRaca());
-            stmt.setString(3, pet.getPorte().getNomePorte());
-            stmt.setString(4, pet.getSexo().getNomeSexo());
+            stmt.setInt(2, pet.getRaca().getCdRaca());
+            stmt.setInt(3, pet.getPorte().getCdPorte());
+            stmt.setInt(4, pet.getSexo().getCdSexo());
             stmt.setString(5, pet.getNomeDono());
             stmt.setString(6, pet.getTelefone());
             stmt.setString(7, pet.getEmail());
-            stmt.setString(8, pet.getCidade().getNomeCidade());
+            stmt.setInt(8, pet.getCidade().getCdCidade());
             stmt.execute();
             return true;
         } catch (SQLException ex) {
@@ -45,9 +45,8 @@ public class PetDAO {
             return false;
         }
     }
-
     public boolean alterar(Pet pet) {
-        String sql = "UPDATE pets SET nomePet=?, raca=?, porte=?, sexo=?, nomeDono=?, telefone=?, email=?, cidade=? WHERE cdPet=?";
+        String sql = "UPDATE pets SET nomePet=?, cdRaca=?, cdPorte=?, cdSexo=?, nomeDono=?, telefone=?, email=?, cdCidade=? WHERE cdPet=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, pet.getNomePet());
@@ -121,10 +120,10 @@ public class PetDAO {
                 cidadeDAO.setConnection(connection);
                 cidade = cidadeDAO.buscar(cidade);
                 
-                pet.setRaca(raca);
-                pet.setPorte(porte);
-                pet.setSexo(sexo);
-                pet.setCidade(cidade);
+                pet.setCdRaca(raca);
+                pet.setCdPorte(porte);
+                pet.setCdSexo(sexo);
+                pet.setCdCidade(cidade);
                 
                 retorno.add(pet);
             }
@@ -159,10 +158,10 @@ public class PetDAO {
                 pet.setTelefone(resultado.getString("telefone"));
                 pet.setEmail(resultado.getString("email"));
                 
-                pet.setRaca(raca);
-                pet.setPorte(porte);
-                pet.setSexo(sexo);
-                pet.setCidade(cidade);
+                pet.setCdRaca(raca);
+                pet.setCdPorte(porte);
+                pet.setCdSexo(sexo);
+                pet.setCdCidade(cidade);
                 
                 retorno = pet;
             }

@@ -13,6 +13,14 @@ import java.io.Serializable;
  */
 public class Raca implements Serializable {
     private int cdRaca;
+
+    public String getNomeRaca() {
+        return nomeRaca;
+    }
+
+    public void setNomeRaca(String nomeRaca) {
+        this.nomeRaca = nomeRaca;
+    }
     private String nomeRaca;
     
     public Raca() {
@@ -29,14 +37,6 @@ public class Raca implements Serializable {
     
     public void setCdRaca(int cdRaca) {
         this.cdRaca = cdRaca;
-    }
-    
-    public String getNomeRaca() {
-        return nomeRaca;
-    }
-    
-    public void setNomeRaca(String nomeRaca) {
-        this.nomeRaca = nomeRaca;
     }
     
     @Override
