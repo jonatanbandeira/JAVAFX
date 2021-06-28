@@ -2,7 +2,9 @@
 
 # Nome do banco de dados "sistemapet"
 
-#7c00ff
+Código de cores principais
 
-#00afbb
+Roxo #7c00ff
+
+Azul/verde #00afbb
  
