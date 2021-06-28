@@ -15,7 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Label;
+//import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -56,7 +56,7 @@ public class FXMLMainController implements Initializable {
         loadPage("page2.fxml");
     }
 
-    @FXML
+@FXML
     private void page3(MouseEvent event) {
         loadPage("page3.fxml");
     }
@@ -75,7 +75,7 @@ public class FXMLMainController implements Initializable {
     private void page6(MouseEvent event) {
         loadPage("page6.fxml");
     }
-    
+    @FXML
     private void loadPage(String page){
         Parent root = null;
         
