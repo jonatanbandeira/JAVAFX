@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.page3Controller1">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.FXMLPage3Controller">
    <children>
       <GridPane layoutX="113.0" layoutY="66.0" prefHeight="251.0" prefWidth="386.0">
         <columnConstraints>
@@ -43,10 +43,10 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <ComboBox prefHeight="25.0" prefWidth="241.0" GridPane.columnIndex="1" />
-            <ComboBox prefHeight="25.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <ComboBox prefHeight="25.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ComboBox prefHeight="25.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="comboBoxRaca" prefHeight="25.0" prefWidth="241.0" GridPane.columnIndex="1" />
+            <ComboBox fx:id="comboBoxPorte" prefHeight="25.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="comboBoxSexo" prefHeight="25.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="comboBoxCidade" prefHeight="25.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <Label layoutX="263.0" layoutY="29.0" text="MATCHPET" textFill="#00afbb">

@@ -25,10 +25,9 @@ import javafx.scene.layout.BorderPane;
  *
  * @author user
  */
-public class page3Controller1 implements Initializable {
+public class FXMLPage5Controller implements Initializable {
 
-
-
+  
     /**
      * Initializes the controller class.
      * @param url
@@ -38,6 +37,5 @@ public class page3Controller1 implements Initializable {
         // TODO
     }    
 
-}
     
-
+}

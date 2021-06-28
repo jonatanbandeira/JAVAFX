@@ -14,14 +14,20 @@ import javafx.fxml.Initializable;
  *
  * @author user
  */
-public class Page6Controller implements Initializable {
+public class FXMLPage2Controller implements Initializable {
+
+
 
     /**
      * Initializes the controller class.
+     * @param url
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    
+   
     
 }

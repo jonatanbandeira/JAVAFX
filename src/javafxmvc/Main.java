@@ -16,7 +16,7 @@ public class Main extends Application {
         
         stage.setScene(scene);
         stage.setTitle("SISTEMA TINPET");
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.show();
     }
 

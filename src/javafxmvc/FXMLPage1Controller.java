@@ -5,7 +5,6 @@
  */
 package javafxmvc;
 
-
 import java.net.URL;
 import java.sql.Connection;
 import java.util.List;
@@ -14,12 +13,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+//import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+//import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+//import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+//import javafx.stage.Stage;
 import javafxmvc.model.dao.CidadeDAO;
-//import javafxmvc.model.dao.PetDAO;
+import javafxmvc.model.dao.PetDAO;
 import javafxmvc.model.dao.PorteDAO;
 import javafxmvc.model.dao.RacaDAO;
 import javafxmvc.model.dao.SexoDAO;
@@ -36,24 +40,14 @@ import javafxmvc.model.domain.Sexo;
  *
  * @author user
  */
-public class page1Controller implements Initializable {
+public class FXMLPage1Controller implements Initializable {
 
     @FXML
-    private TextField textFieldPetNomePet;
+    private TableView<Pet> tableViewPets;
     @FXML
-    private TextField textFieldPetNomeDono;
+    private TableColumn<Pet, String> tableColumnPetNomePet;
     @FXML
-    private TextField textFieldPetNomeTelefone;
-    @FXML
-    private TextField textFieldPetEmail;
-    @FXML
-    private ComboBox comboBoxRaca;
-    @FXML
-    private ComboBox comboBoxSexo;
-    @FXML
-    private ComboBox comboBoxPorte;
-    @FXML
-    private ComboBox comboBoxCidade;
+    private TableColumn<Pet, String> tableColumnPetNomeDono;
     @FXML
     private Button buttonInserir;
     @FXML
@@ -76,6 +70,7 @@ public class page1Controller implements Initializable {
     private Label labelPetCidade;   
     @FXML
     private Label labelPetRaca; 
+    
     @FXML
     private List<Pet> listPets;
     @FXML
@@ -86,6 +81,7 @@ public class page1Controller implements Initializable {
     private List<Raca> listRacas;
     @FXML
     private List<Cidade> listCidades;
+    
     @FXML
     private ObservableList<Pet> observableListPets;
     @FXML
@@ -97,9 +93,10 @@ public class page1Controller implements Initializable {
     @FXML
     private ObservableList<Cidade> observableListCidades;
     
-    //Atributos para manipulação de Banco de Dados
+     //Atributos para manipulação de Banco de Dados
     private final Database database = DatabaseFactory.getDatabase("postgresql");
     private final Connection connection = database.conectar();
+    private final PetDAO PetDAO = new PetDAO();
     private final RacaDAO RacaDAO = new RacaDAO();
     private final SexoDAO SexoDAO = new SexoDAO();
     private final PorteDAO PorteDAO = new PorteDAO();
@@ -107,82 +104,49 @@ public class page1Controller implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        PetDAO.setConnection(connection);    
+        carregarTableViewPet();
         
-        RacaDAO.setConnection(connection);    
-        carregarComboBoxRaca();
-        SexoDAO.setConnection(connection);    
-        carregarComboBoxSexo();
-        PorteDAO.setConnection(connection);    
-        carregarComboBoxPorte();
-        CidadeDAO.setConnection(connection);    
-        carregarComboBoxCidade();
-    }
-   
-    public void carregarComboBoxRaca() {
+         // Limpando a exibição dos detalhes do cliente
+        selecionarItemTableViewPets(null);
 
-        listRacas = RacaDAO.listar();
-        observableListRacas = FXCollections.observableArrayList(listRacas);
-        comboBoxRaca.setItems(observableListRacas);
+        // Listen acionado diante de quaisquer alterações na seleção de itens do TableView
+        tableViewPets.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> selecionarItemTableViewPets(newValue));
     }
 
-    public void carregarComboBoxSexo() {
+    public void carregarTableViewPet() {
+        tableColumnPetNomePet.setCellValueFactory(new PropertyValueFactory<>("nomePet"));
+        tableColumnPetNomeDono.setCellValueFactory(new PropertyValueFactory<>("nomeDono"));
 
-        listSexos = SexoDAO.listar();
-        observableListSexos = FXCollections.observableArrayList(listSexos);
-        comboBoxSexo.setItems(observableListSexos);
-    }
-     
-    public void carregarComboBoxPorte() {
+        listPets = PetDAO.listar();
 
-        listPortes = PorteDAO.listar();
-        observableListPortes = FXCollections.observableArrayList(listPortes);
-        comboBoxPorte.setItems(observableListPortes);
+        observableListPets = FXCollections.observableArrayList(listPets);
+        tableViewPets.setItems(observableListPets);
     }
     
-    
-    public void carregarComboBoxCidade() {
-
-        listCidades = CidadeDAO.listar();
-        observableListCidades = FXCollections.observableArrayList(listCidades);
-        comboBoxCidade.setItems(observableListCidades);
-    }
-    
-   
-/**
-    public void selecionarItemTableViewClientes(Cliente cliente) {
-        if (cliente != null) {
-            labelClienteCodigo.setText(String.valueOf(cliente.getCdCliente()));
-            labelClienteNome.setText(cliente.getNome());
-            labelClienteCPF.setText(cliente.getCpf());
-            labelClienteTelefone.setText(cliente.getTelefone());
+     public void selecionarItemTableViewPets(Pet pet) {
+        if (pet != null) {
+            labelPetNomePet.setText(pet.getNomePet());
+            labelPetNomeDono.setText(pet.getNomeDono());
+            labelPetTelefone.setText(pet.getTelefone());
+            labelPetEmail.setText(pet.getEmail());
+            labelPetPorte.setText(String.valueOf(pet.getPorte()));
+            labelPetSexo.setText(String.valueOf(pet.getSexo()));
+            labelPetCidade.setText(String.valueOf(pet.getCidade()));
+            labelPetRaca.setText(String.valueOf(pet.getRaca()));
         } else {
-            labelClienteCodigo.setText("");
-            labelClienteNome.setText("");
-            labelClienteCPF.setText("");
-            labelClienteTelefone.setText("");
+            labelPetNomePet.setText("");
+            labelPetNomeDono.setText("");
+            labelPetTelefone.setText("");
+            labelPetEmail.setText("");
+            labelPetPorte.setText("");
+            labelPetSexo.setText("");
+            labelPetCidade.setText("");
+            labelPetRaca.setText("");
         }
     }
-     **/
-
-
+}
     
     
     
-    
-    
-    
-    
-    
-
-    
-        
-         
-        
-        
-        
-        
-        
-     
-    }
-    
-

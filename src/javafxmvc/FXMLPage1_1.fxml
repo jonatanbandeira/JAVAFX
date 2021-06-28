@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.page1Controller">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.FXMLPage1_1Controller">
    <children>
       <GridPane layoutX="57.0" layoutY="49.0" prefHeight="302.0" prefWidth="484.0">
         <columnConstraints>
@@ -72,7 +72,7 @@
             </Label>
             <TextField fx:id="textFieldPetNomePet" GridPane.columnIndex="1" />
             <TextField fx:id="textFieldPetNomeDono" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="textFieldPetNomeTelefone" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="textFieldPetTelefone" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="textFieldPetEmail" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <ComboBox fx:id="comboBoxPorte" prefHeight="25.0" prefWidth="248.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <ComboBox fx:id="comboBoxSexo" prefHeight="25.0" prefWidth="249.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
@@ -88,7 +88,7 @@
             <Label fx:id="labelPetRaca" prefHeight="17.0" prefWidth="212.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
          </children>
       </GridPane>
-      <Button fx:id="buttonInserir" layoutX="167.0" layoutY="356.0" mnemonicParsing="false" style="-fx-background-color: #00afbb;" text="Cadastrar" textFill="WHITE">
+      <Button fx:id="buttonConfirmar" layoutX="167.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonConfirmar" style="-fx-background-color: #00afbb;" text="Cadastrar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -98,12 +98,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Text>
-      <Button fx:id="buttonRemover" layoutX="369.0" layoutY="356.0" mnemonicParsing="false" style="-fx-background-color: #00afbb;" text="Remover" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="buttonAlterar" layoutX="271.0" layoutY="356.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: #00afbb;" text="Alterar" textFill="WHITE">
+      <Button fx:id="buttonCancelar" layoutX="274.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonCancelar" style="-fx-background-color: #00afbb;" text="Cancelar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

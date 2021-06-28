@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javafxmvc;
 
 import java.io.IOException;
@@ -48,47 +43,43 @@ public class FXMLMainController implements Initializable {
 
     @FXML
     private void page1(MouseEvent event) {
-        loadPage("page1.fxml");
+        loadPage("FXMLPage1.fxml");
     }
 
     @FXML
     private void page2(MouseEvent event) {
-        loadPage("page2.fxml");
+        loadPage("FXMLPage2.fxml");
     }
 
 @FXML
     private void page3(MouseEvent event) {
-        loadPage("page3.fxml");
+        loadPage("FXMLPage3.fxml");
     }
 
     @FXML
     private void page4(MouseEvent event) {
-        loadPage("page4.fxml");
+        loadPage("FXMLPage4.fxml");
     }
 
     @FXML
     private void page5(MouseEvent event) {
-        loadPage("page5.fxml");
+        loadPage("FXMLPage5.fxml");
     }
 
     @FXML
     private void page6(MouseEvent event) {
-        loadPage("page6.fxml");
+        loadPage("FXMLPage6.fxml");
     }
     @FXML
     private void loadPage(String page){
         Parent root = null;
         
-         
         try {
             root =javafx.fxml.FXMLLoader.load(getClass().getResource(page));
         } catch (IOException ex) {
             Logger.getLogger(FXMLMainController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
-        
+
         bp.setCenter(root);
     }
     

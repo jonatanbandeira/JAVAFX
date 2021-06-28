@@ -25,7 +25,7 @@ import javafx.scene.layout.BorderPane;
  *
  * @author user
  */
-public class page4Controller1 implements Initializable {
+public class FXMLPage4Controller implements Initializable {
 
    
 
