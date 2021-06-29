@@ -19,26 +19,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-//import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-//import javafxmvc.model.dao.CidadeDAO;
 import javafxmvc.model.dao.PetDAO;
-///import javafxmvc.model.dao.PorteDAO;
-//import javafxmvc.model.dao.RacaDAO;
-//import javafxmvc.model.dao.SexoDAO;
 import javafxmvc.model.database.Database;
 import javafxmvc.model.database.DatabaseFactory;
-//import javafxmvc.model.domain.Cidade;
 import javafxmvc.model.domain.Pet;
-//import javafxmvc.model.domain.Porte;
-//import javafxmvc.model.domain.Raca;
-//import javafxmvc.model.domain.Sexo;
 
-/**
- * FXML Controller class
- *
- * @author user
- */
 public class FXMLPage1Controller implements Initializable {
 
     @FXML
@@ -54,10 +40,6 @@ public class FXMLPage1Controller implements Initializable {
     @FXML
     private Button buttonRemover;
     @FXML
-    private Label labelPetNomePet;   
-    @FXML
-    private Label labelPetNomeDono;
-    @FXML
     private Label labelPetTelefone;
     @FXML
     private Label labelPetEmail;   
@@ -72,6 +54,27 @@ public class FXMLPage1Controller implements Initializable {
     
     @FXML
     private List<Pet> listPets;
+    
+    private Stage dialogStage;
+    private boolean buttonConfirmarClicked = false;
+    private Pet pet;
+    
+    public Stage getDialogStage() {
+        return dialogStage;
+    }
+
+    public void setDialogStage(Stage dialogStage) {
+        this.dialogStage = dialogStage;
+    }
+
+    public Pet getPet() {
+        return this.pet;
+    }
+    
+    public boolean isButtonConfirmarClicked() {
+        return buttonConfirmarClicked;
+    }
+    
     /*
     @FXML
     private List<Sexo> listSexos;
@@ -127,8 +130,6 @@ public class FXMLPage1Controller implements Initializable {
     
      public void selecionarItemTableViewPets(Pet pet) {
         if (pet != null) {
-            labelPetNomePet.setText(pet.getNomePet());
-            labelPetNomeDono.setText(pet.getNomeDono());
             labelPetTelefone.setText(pet.getTelefone());
             labelPetEmail.setText(pet.getEmail());
             labelPetPorte.setText(String.valueOf(pet.getPorte()));
@@ -136,8 +137,6 @@ public class FXMLPage1Controller implements Initializable {
             labelPetCidade.setText(String.valueOf(pet.getCidade()));
             labelPetRaca.setText(String.valueOf(pet.getRaca()));
         } else {
-            labelPetNomePet.setText("");
-            labelPetNomeDono.setText("");
             labelPetTelefone.setText("");
             labelPetEmail.setText("");
             labelPetPorte.setText("");
@@ -145,24 +144,25 @@ public class FXMLPage1Controller implements Initializable {
             labelPetCidade.setText("");
             labelPetRaca.setText("");
         }
-/*
+     }
+
     @FXML
-    public static void handleButtonInserir() throws IOException {
-    Pet pet = new Pet();
-    boolean buttonConfirmarClicked = showFXMLPage1_1(pet);
+    public void handleButtonInserir() throws IOException {
+    Pet pet2 = new Pet();
+    boolean buttonConfirmarClicked = showFXMLPage1_1(pet2);
         if (buttonConfirmarClicked) {
-            PetDAO.inserir(pet);
+            PetDAO.inserir(pet2);
             carregarTableViewPets();
         }
     }
     
     @FXML
     public void handleButtonAlterar() throws IOException {
-    Pet pet = tableViewPets.getSelectionModel().getSelectedItem();//Obtendo cliente selecionado
-    if (pet != null) {
-            boolean buttonConfirmarClicked = showFXMLPage1_1(pet);
+    Pet pet2 = tableViewPets.getSelectionModel().getSelectedItem();//Obtendo cliente selecionado
+    if (pet2 != null) {
+            boolean buttonConfirmarClicked = showFXMLPage1_1(pet2);
             if (buttonConfirmarClicked) {
-                PetDAO.alterar(pet);
+                PetDAO.alterar(pet2);
                 carregarTableViewPets();
             }
         } else {
@@ -174,9 +174,9 @@ public class FXMLPage1Controller implements Initializable {
 
     @FXML
     public void handleButtonRemover() throws IOException {
-        Pet pet = tableViewPets.getSelectionModel().getSelectedItem();
-        if (pet != null) {
-            PetDAO.remover(pet);
+        Pet pet2 = tableViewPets.getSelectionModel().getSelectedItem();
+        if (pet2 != null) {
+            PetDAO.remover(pet2);
             carregarTableViewPets();
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -185,11 +185,9 @@ public class FXMLPage1Controller implements Initializable {
         }
     }
 
-
-
-        public boolean showFXMLPage1_1(Pet pet) throws IOException {
+      public boolean showFXMLPage1_1(Pet pet) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(FXMLPage1_1Controller.class.getResource("/FXMLPage1_1.fxml"));
+        loader.setLocation(FXMLPage1_1Controller.class.getResource("FXMLPage1_1.fxml"));
         AnchorPane page = (AnchorPane) loader.load();
 
         // Criando um Estágio de Diálogo (Stage Dialog)
@@ -213,9 +211,8 @@ public class FXMLPage1Controller implements Initializable {
         dialogStage.showAndWait();
 
         return controller.isButtonConfirmarClicked();
-      */  
-        }
     }
+}
 
   
     

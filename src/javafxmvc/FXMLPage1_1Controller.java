@@ -164,6 +164,9 @@ public class FXMLPage1_1Controller implements Initializable {
             pet.setNomeDono(textFieldPetNomeDono.getText());
             pet.setTelefone(textFieldPetTelefone.getText());
             pet.setEmail(textFieldPetEmail.getText());
+            
+            
+           
 
             buttonConfirmarClicked = true;
             dialogStage.close();
@@ -192,7 +195,7 @@ public class FXMLPage1_1Controller implements Initializable {
         if (textFieldPetEmail.getText() == null || textFieldPetEmail.getText().length() == 0) {
             errorMessage += "Email inválido!\n";
         }
-
+        
         if (errorMessage.length() == 0) {
             return true;
         } else {
@@ -206,26 +209,6 @@ public class FXMLPage1_1Controller implements Initializable {
         }
     }
 }
-
-    
-    
-    
-   /**
-    public void selecionarItemTableViewClientes(Cliente cliente) {
-        if (cliente != null) {
-            labelClienteCodigo.setText(String.valueOf(cliente.getCdCliente()));
-            labelClienteNome.setText(cliente.getNome());
-            labelClienteCPF.setText(cliente.getCpf());
-            labelClienteTelefone.setText(cliente.getTelefone());
-        } else {
-            labelClienteCodigo.setText("");
-            labelClienteNome.setText("");
-            labelClienteCPF.setText("");
-            labelClienteTelefone.setText("");
-        }
-    }
-     **/
-
 
     
     

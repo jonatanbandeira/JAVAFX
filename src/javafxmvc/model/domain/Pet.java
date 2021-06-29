@@ -14,19 +14,59 @@ public class Pet implements Serializable {
     private String email;
     private Cidade cidade;
 
+    public Raca getCdRaca() {
+        return cdRaca;
+    }
+
+    public void setCdRaca(Raca cdRaca) {
+        this.cdRaca = cdRaca;
+    }
+
+    public Porte getCdPorte() {
+        return cdPorte;
+    }
+
+    public void setCdPorte(Porte cdPorte) {
+        this.cdPorte = cdPorte;
+    }
+
+    public Sexo getCdSexo() {
+        return cdSexo;
+    }
+
+    public void setCdSexo(Sexo cdSexo) {
+        this.cdSexo = cdSexo;
+    }
+
+    public Cidade getCdCidade() {
+        return cdCidade;
+    }
+
+    public void setCdCidade(Cidade cdCidade) {
+        this.cdCidade = cdCidade;
+    }
+    
+    private Raca cdRaca;
+    private Porte cdPorte;
+    private Sexo cdSexo;
+    private Cidade cdCidade;
+    
+
     public Pet(){
     }
     
-    public Pet(int cdPet, String nomePet, Raca raca, Porte porte, Sexo sexo, String nomeDono, String telefone, String email, Cidade cidade) {
+    public Pet(int cdPet, Cidade cdCidade, Porte cdPorte, Raca cdRaca, Sexo cdSexo, String nomePet, String nomeDono, String telefone, String email) {
         this.cdPet = cdPet;
         this.nomePet = nomePet;
-        this.raca = raca;
-        this.porte = porte;
-        this.sexo = sexo;
         this.nomeDono = nomeDono;
         this.telefone = telefone;
         this.email = email;
-        this.cidade = cidade;
+        this.cdCidade = cdCidade;
+        this.cdPorte = cdPorte;
+        this.cdRaca = cdRaca;
+        this.cdSexo = cdSexo;
+        
+        
     }
 
     public int getCdPet() {
