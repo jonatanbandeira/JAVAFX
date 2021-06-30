@@ -1,2 +1,5 @@
 /build/
 /dist/
+/JavaFX/nbproject/private/
+/JavaFX/build/
+/JavaFX/dist/
